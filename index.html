@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Birthday Celebration</title>
+   <style>
+      /* General Styles */
+      body {
+         margin: 20px;
+         padding: 0;
+         font-family: 'Arial', sans-serif;
+         overflow: hidden;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+         background: url('https://i.imgur.com/Eutmf76.png') no-repeat center center fixed;
+         background-size: cover;
+      }
+
+      /* Initial Background */
+      #initial-background {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: url('https://i.imgur.com/Eutmf76.png') no-repeat center center fixed;
+         background-size: cover;
+         z-index: 1;
+      }
+
+      /* Quote Background */
+      #quote-background {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: url('https://i.imgur.com/7e1jNkB.png') no-repeat center center fixed;
+         background-size: cover;
+         z-index: 1;
+         display: none;
+      }
+
+      /* Note Section */
+      #message2 {
+         display: none;
+         justify-content: center;
+         align-items: center;
+         text-align: center;
+         height: auto;
+         padding: 40px;
+         z-index: 2;
+         background-color: white;
+         width: 60%;
+         max-width: 700px;
+         border-radius: 20px;
+         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+         position: relative;
+         margin: 20px auto;
+      }
+
+      #message2 h1 {
+         font-size: 2.5em;
+         margin-bottom: 20px;
+         color: black;
+      }
+
+      #message2 p {
+         font-size: 1.2em;
+         line-height: 1.8;
+         color: black;
+         text-align: left;
+         padding: 20px;
+      }
+   </style>
+   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+   <!-- Initial Background -->
+   <div id="initial-background"></div>
+
+   <!-- Quote Background -->
+   <div id="quote-background"></div>
+
+   <!-- Note Section -->
+   <div id="message2">
+      <div>
+         <h1>Happy Birthday Rashu! 🎉</h1>
+         <p>
+            Today isn't just another day; it's the day the world was blessed with you. From your kind heart to 
+            your radiant smile, everything about you is a reminder of how special you truly are. You have this 
+            magical way of making life brighter and more beautiful, not just for me, but for everyone lucky 
+            enough to know you. On your birthday, I want you to know just how much you mean to me! You had your share of sadness and worries
+			Now it’s time for new chapters in life—there’s more to go… mostly another 40 years of life to enjoy, a little bit daily.<br><br>
+            There is more to write, but I am stopping here. Enjoy your birthday and have a blast, Rashu....
+         </p>
+      </div>
+   </div>
+
+   <script>
+      // Trigger Confetti Animation
+      function launchConfetti() {
+         confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 }
+         });
+      }
+
+      // Launch confetti immediately
+      launchConfetti();
+
+      // Continue confetti for a few seconds
+      const confettiInterval = setInterval(launchConfetti, 500);
+      setTimeout(() => clearInterval(confettiInterval), 3000);
+
+      // Show the quote background and note after 5 seconds
+      setTimeout(function () {
+         document.getElementById('initial-background').style.display = 'none';
+         document.getElementById('quote-background').style.display = 'block';
+         document.getElementById('message2').style.display = 'flex';
+      }, 5000);
+   </script>
+</body>
+</html>
